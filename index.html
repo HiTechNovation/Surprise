@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise !!</title>
+    <link rel="stylesheet" href="./output.css" type="text/css">
+
+</head>
+
+<body class="bg-[url('bg.jpg')] backdrop-blur-[7px] bg-cover h-screen flex items-center justify-center">
+    <div class="flex flex-col items-center space-y-4">
+        <div class="w-1/2 h-1/2 opacity-90 border-[1px] border-cyan-400 rounded-lg shadow-multi-color overflow-hidden">
+            <div class="text-center font-serif text-cyan-100 p-4">
+                <img src="birthday.png" alt=" ">
+                <p class="text-lg mt-2">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates placeat molestias perspiciatis! Aliquam, quasi quod voluptatum dignissimos officia, commodi necessitatibus earum ut possimus blanditiis quia dolor lore debitis vel aliquid am ut.
+                </p>
+            </div>
+        </div>
+        <div class="bg-black text-white p-2 border rounded-xl border-cyan-500 flex items-center justify-center hover:scale-90 transition-all">
+            <button onclick="confetiii()" class=" "> <a href="home.html">Touch me  ❤</a></button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <script>
+        function confetiii() {
+            const count = 200,
+                defaults = {
+                    origin: {
+                        y: 0.7
+                    },
+                };
+
+            function fire(particleRatio, opts) {
+                confetti(
+                    Object.assign({}, defaults, opts, {
+                        particleCount: Math.floor(count * particleRatio),
+                    })
+                );
+            }
+
+            fire(0.25, {
+                spread: 26,
+                startVelocity: 55,
+            });
+
+            fire(0.2, {
+                spread: 60,
+            });
+
+            fire(0.35, {
+                spread: 100,
+                decay: 0.91,
+                scalar: 0.8,
+            });
+
+            fire(0.1, {
+                spread: 120,
+                startVelocity: 25,
+                decay: 0.92,
+                scalar: 1.2,
+            });
+
+            fire(0.1, {
+                spread: 120,
+                startVelocity: 45,
+            })
+        };
+    </script>
+
+</body>
+
+
+</html>

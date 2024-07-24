@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./output.css" type="text/css">
+
+</head>
+
+<body class="    m-2 overflow-auto ">
+    <div class="flex flex-col items-center bg-w-full shadow-multi-color">
+        <div class="  h-48 w-full md:h-1/2 md:w-full shadow-inner bg-gradient-to-b from-blue-100 to-pink-400  mt-2 relative ">
+            <img src="birthday.png" alt=" "> </div>
+
+
+    </div>
+    <div class=" w-full bg-gradient-to-b from-blue-100 to-pink-400  h-40 mt-4 shadow-multi-color p-5 rounded-3xl">
+        <p class="text-center "> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor nulla illo esse nostrum ex corrupti, eum cum facilis officiis ratione porro perferendis qui error dignissimos laborum magnam maiores a architecto?</p>
+
+    </div>
+    <div class="flex justify-center text-center mx-auto mt-3 border rounded-lg border-red-500 w-52 bg-gradient-to-b from-blue-100 to-pink-400 hover:scale-90 p-2 font-serif " onclick=" confetti()"><button> click me to celebrate 💞 </button></div>
+
+    <div class="flex flex-col items-center w-full mt-5 space-y-5">
+        <div class="flex w-full md:w-full justify-between">
+            <div class="h-80 w-48 shadow-multi-color hover:scale-110 transition-all  duration-500 rounded-xl overflow-hidden  "> <img src="1.jpg" alt="" onclick="imageEffect()">
+                <p class="text-center bg-gradient-to-b from-blue-300 to-pink-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, asperiores!</p>
+            </div>
+            <div class="h-80 w-48 shadow-multi-color hover:scale-110 transition-all duration-500 rounded-xl  overflow-hidden "> <img src="2.jpg" alt="" onclick="imageEffect()">
+                <p class="text-center  bg-gradient-to-b from-blue-300 to-pink-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, asperiores!</p>
+            </div>
+        </div>
+        <div class="flex w-full md:w-full justify-between">
+            <div class="h-80 w-48 shadow-multi-color hover:scale-110 transition-all duration-500 rounded-xl  overflow-hidden "> <img src="3.jpg" alt="" onclick="imageEffect()">
+                <p class="text-center  bg-gradient-to-b from-blue-300 to-pink-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, asperiores!</p>
+            </div>
+            <div class="h-80 w-48 shadow-multi-color hover:scale-110 transition-all duration-500 rounded-xl  overflow-hidden "> <img src="4.jpg" alt="" onclick="imageEffect()">
+                <p class="text-center  bg-gradient-to-b from-blue-300 to-pink-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, asperiores!</p>
+            </div>
+        </div>
+        <div class="flex w-full md:w-full justify-between">
+            <div class="h-80 w-48 shadow-multi-color hover:scale-110 transition-all duration-500 rounded-xl  overflow-hidden"> <img src="5.jpg" alt="" onclick="imageEffect()">
+                <p class="text-center  bg-gradient-to-b from-blue-300 to-pink-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, asperiores!</p>
+            </div>
+            <div class="h-80 w-48 shadow-multi-color hover:scale-110 transition-all duration-500 rounded-xl  overflow-hidden "> <img src="6.jpg" alt="" onclick="imageEffect()">
+                <p class="text-center  bg-gradient-to-b from-blue-300 to-pink-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, asperiores!</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <script>
+        function imageEffect() {
+            const defaults = {
+                spread: 360,
+                ticks: 100,
+                gravity: 0,
+                decay: 0.94,
+                startVelocity: 30,
+                shapes: ["heart"],
+                colors: ["FFC0CB", "FF69B4", "FF1493", "C71585"],
+            };
+
+            confetti({
+                ...defaults,
+                particleCount: 50,
+                scalar: 2,
+            });
+
+            confetti({
+                ...defaults,
+                particleCount: 25,
+                scalar: 3,
+            });
+
+            confetti({
+                ...defaults,
+                particleCount: 10,
+                scalar: 4,
+            });
+        }
+        const end = Date.now() + 5 * 1000;
+
+        // go Buckeyes!
+        const colors = ["#bb0000", "#ffffff"];
+
+        (function frame() {
+            confetti({
+                particleCount: 2,
+                angle: 60,
+                spread: 55,
+                origin: {
+                    x: 0
+                },
+                colors: colors,
+            });
+
+            confetti({
+                particleCount: 2,
+                angle: 120,
+                spread: 55,
+                origin: {
+                    x: 1
+                },
+                colors: colors,
+            });
+
+            if (Date.now() < end) {
+                requestAnimationFrame(frame);
+            }
+        })();
+        const defaults = {
+            spread: 360,
+            ticks: 50,
+            gravity: 0,
+            decay: 0.94,
+            startVelocity: 30,
+            shapes: ["star"],
+            colors: ["FFE400", "FFBD00", "E89400", "FFCA6C", "FDFFB8"],
+        };
+
+        function shoot() {
+
+            confetti({
+                ...defaults,
+                particleCount: 300,
+                scalar: 1.2,
+                shapes: ["star"],
+            });
+
+            confetti({
+                ...defaults,
+                particleCount: 200,
+                scalar: 0.75,
+                shapes: ["circle"],
+            });
+        }
+
+        setTimeout(shoot, 100);
+        setTimeout(shoot, 100);
+        setTimeout(shoot, 200);
+    </script>
+</body>
+
+</html>

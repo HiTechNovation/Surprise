@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blurred Background with Tailwind</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .bg-blur {
+            backdrop-filter: blur(10px);
+        }
+        
+        .extra-blur {
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="relative w-full h-screen bg-cover bg-center" style="background-image: url('bg.jpg');">
+        <!-- Background blur -->
+        <div class="absolute inset-0 bg-blur"></div>
+
+        <!-- More blurred div -->
+        <div class="relative p-8 bg-blur extra-blur rounded-lg mt-40">
+            <h1 class="text-2xl font-bold">More Blurred Content</h1>
+            <p class="mt-4">This content is in a div with more blur applied to it.</p>
+        </div>
+    </div>
+</body>
